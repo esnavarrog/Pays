@@ -7,6 +7,7 @@ class PaymentsController < ApplicationController
     @end_date = params[:end].try(:to_date) || Date.current
     range = (@start_date..@end_date)
 
+    @payment = Payment.search(params[:search])
 
     @payments = Payment.where(created_at: range).order(created_at: :desc).paginate(page: params[:page], per_page: 5)
     @payment = Payment.new
@@ -48,8 +49,8 @@ class PaymentsController < ApplicationController
   def destroy
     @payment.destroy
     respond_to do |format|
+      format.html { redirect_back fallback_location: @product, notice: 'La lista fué borrada satisfactoriamente' }
       format.json { head :no_content }
-      format.js
     end
   end
 
@@ -59,6 +60,6 @@ class PaymentsController < ApplicationController
     end
 
     def payment_params
-      params.require(:payment).permit(:deudor, :numfact, :pay, :estado)
+      params.require(:payment).permit(:deudor, :numfact, :pay, :estado, :monto_total)
     end
 end

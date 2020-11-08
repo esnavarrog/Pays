@@ -10,21 +10,27 @@
         </div>
     </div>
     <div class="item form-group">
-        <%= f.label :pay, "Porcentaje de anticipo: " %>
+        <%= f.label :numfact, "Numero de factura a anticipar: " %>
         <div class="input-group">
-          <%= f.text_field :pay, {:class=> "form-control", :placeholder=>"Introduzca el porcentaje de anticipo..."} %>        
+          <%= f.number_field :numfact, {:class=> "form-control", :placeholder=>"Introduzca el N° factura..."} %>        
          
         </div>
     </div>
     <div class="item form-group">
-        <%= f.label :numfact, "Numero de factura a anticipar: " %>
+        <%= f.label :pay, "Porcentaje de anticipo: " %>
         <div class="input-group">
-          <%= f.text_field :numfact, {:class=> "form-control", :placeholder=>"Introduzca el N° factura..."} %>        
+          <%= f.number_field :pay, {:class=> "form-control", :placeholder=>"Introduzca el porcentaje de anticipo..."} %> %        
          
         </div>
     </div>
+    <div class="item form-group">
+        <%= f.label "Monto total" %>
+        <div class="input-group">
+        <%= f.number_field :monto_total, {:class=> "form-control"} %>        
+        </div>
+    </div>
     <div class="form-group">
-        <%= f.label :estado, "Numero de factura a anticipar: " %>
+        <%= f.label :estado, "Selecciona un estado..." %>
           <%= f.select :estado, Payment::ESTADO, {:class=> "form-control", :placeholder=>"Seleccione un estado..."} %>
     </div>
 
