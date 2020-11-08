@@ -1,0 +1,76 @@
+<div class="container">
+  <h1>Anticipos</h1>
+  <div class="float-right"></div>
+
+ 
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalPayments">
+    Añadir Anticipo
+  </button>
+
+  <input type="text" id="daterange" class="daterange" />
+
+  <table id="tablaPrepayments" class="table table-border" width="100">
+      <thead>
+          <tr>
+              <th>ID</th>
+              <th>Deudor</th>
+              <th>Fecha</th>
+              <th>N° Facturas</th>
+              <th>% Anticipo</th>
+              <th>Monto Final</th>
+              <th>Estado</th>
+          </tr>
+      </thead>
+      <tbody id="tablaPayments">
+          <% @payments.each do |ant| %>
+              <tr id="anticipo_<%= ant.id %>">
+                  <td>#<%= ant.id %></td>
+                  <td><%= ant.deudor %></td>
+                  <td><%= ant.created_at.strftime("%d-%m-%Y") %></td>
+                  <td><%= ant.numfact %></td>
+                  <td><%= ant.pay %></td>
+                  <td></td>
+                  
+                  <td>
+                    <% if ant.estado === "Pendiente" %>
+                      <div class="btn btn-warning">
+                        <%= ant.estado %>
+                      </div>
+                    <% elsif ant.estado === "Aprobado" %>
+                      <div class="btn btn-success">
+                        <%= ant.estado %>
+                      </div>
+                    <% else %>
+                      <div class="btn btn-danger">
+                        <%= ant.estado %>
+                      </div>
+                  <% end %>
+                  </td>
+                  <td>
+                      <div class="dropdown">
+                          <button class="btn btn-secondary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+                          </button>
+                          <div class="dropdown-menu">
+                            <%= link_to 'Modificar', edit_payment_path(ant), html_options = {class: "dropdown-item", data_target: "#modificarModel", data_toggle: "modal", remote: true} %>
+                              <%= link_to 'Eliminar', ant, remote: true, method: :delete, data: { confirm: "Estas seguro de eliminar el anticipo de #{ant.deudor}?" }, class: "dropdown-item" %>
+                          </div>
+                        </div>
+                  </td>
+              </tr>
+          <% end %>
+      </tbody>
+
+  </table>
+</div>
+
+  <%= will_paginate @payments,list_classes: %w(pagination justify-content-center), previous_label: '&laquo;', :next_label => '&raquo;' , renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+
+<%= render 'modal_payments' %>
+
+
+<%= form_tag root_path, method: :get do %>
+  <%= hidden_field_tag :start %>
+  <%= hidden_field_tag :end %>
+<% end %>
+
+

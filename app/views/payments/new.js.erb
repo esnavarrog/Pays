@@ -1,0 +1,10 @@
+// Agrega un titulo al dialogo
+$('#modal-payments-title').html("Nuevo Anticipo");
+
+// Render un nuevo formulario
+$('.modal-body-payments').html('<%= j render("form") %>');
+
+// Muestra un dialogo dnamico
+$('#modalPayments').modal("show");
+
+  

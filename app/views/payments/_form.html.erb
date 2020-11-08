@@ -1,0 +1,35 @@
+<%= form_with(model: @payment, remote: true, html: {id:"anticipo-form"}) do |f| %>
+    <div class="form-group">
+        <h4 class="control-label">Datos de los anticipos</h4>
+    </div>
+    <div class="item form-group">
+        <%= f.label :deudor, "Nombre del deudor: " %>
+        <div class="input-group">
+          <%= f.text_field :deudor, {:class=> "form-control", :placeholder=>"Introduzca el deudor..."} %>        
+          
+        </div>
+    </div>
+    <div class="item form-group">
+        <%= f.label :pay, "Porcentaje de anticipo: " %>
+        <div class="input-group">
+          <%= f.text_field :pay, {:class=> "form-control", :placeholder=>"Introduzca el porcentaje de anticipo..."} %>        
+         
+        </div>
+    </div>
+    <div class="item form-group">
+        <%= f.label :numfact, "Numero de factura a anticipar: " %>
+        <div class="input-group">
+          <%= f.text_field :numfact, {:class=> "form-control", :placeholder=>"Introduzca el N° factura..."} %>        
+         
+        </div>
+    </div>
+    <div class="form-group">
+        <%= f.label :estado, "Numero de factura a anticipar: " %>
+          <%= f.select :estado, Payment::ESTADO, {:class=> "form-control", :placeholder=>"Seleccione un estado..."} %>
+    </div>
+
+    <div class="actions col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
+        <%= f.submit 'Guardar Anticipo', :class => "btn btn-success"%>
+    </div>  
+
+<% end %>
