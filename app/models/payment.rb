@@ -1,12 +1,8 @@
 class Payment < ApplicationRecord
 
-    ESTADO = ["Pendiente", "Aprobado", "Pagado"]
+    ESTADO = ["Procesando", "Aprobado", "Rechazado"]
 
-    def self.search(search)
-        if search 
-            where(["name LIKE ?","%#{search}%"])
-        else
-            all
-        end
+    def self.buscador(termino)
+        Payment.where("deudor LIKE ? OR id LIKE ? OR estado LIKE ?", termino,termino,termino)
     end 
 end

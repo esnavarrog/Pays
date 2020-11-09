@@ -7,15 +7,17 @@ class PaymentsController < ApplicationController
     @end_date = params[:end].try(:to_date) || Date.current
     range = (@start_date..@end_date)
 
-    @payment = Payment.search(params[:search])
-
-    @payments = Payment.where(created_at: range).order(created_at: :desc).paginate(page: params[:page], per_page: 5)
+    @payments = Payment.where(created_at: range).order(created_at: :desc).paginate(page: params[:page], per_page: 10).all
     @payment = Payment.new
   end
 
   def new
     @payment = Payment.new
   end
+  def results
+
+    @payments = Payment.order(created_at: :desc).buscador(params[:termino])
+  end 
 
   def edit
   end

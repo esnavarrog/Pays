@@ -1,0 +1,42 @@
+<div class="row my-2 p-2">
+    <div class="col bg-transparent">
+
+        <%= link_to 'Home', root_path, class:"btn btn-light float-right"  %>
+
+      <h5 class="text-secondary">Anticipar</h5>
+    </div>
+  </div>
+  <div class="row shadow-sm p-2 mb-4 bg-white">
+    <div class="col">
+
+      <h4 class="float-left">Cartola de Anticipos</h1>
+        
+    </div>
+  </div>
+
+  <ul class="nav nav-tabs mt-4" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Últimos Anticipos</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Simular Anticipos</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Mis Deudores</a>
+    </li>
+  </ul>
+  
+
+ <div class="row py-4">
+   
+
+    <div class="col form-inline">
+      <div class="form-group">
+        <%= form_tag "/search" do %>
+        <%= text_field_tag("termino", value = nil, options = { placeholder:' Deudor o ID', class:'fa form-control shadow-sm mr-2'}) %>
+        <% end %>
+        <input type="text" id="daterange" class="form-control shadow-sm"/>
+      </div>
+     
+    </div>
+  </div>

@@ -1,0 +1,23 @@
+<div class="container bg-light">
+    <%= render './partials/result'%>
+
+<table id="tablaPrepayments" class="table table-borderless" width="100">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Deudor</th>
+            <th>Fecha</th>
+            <th>N° Facturas</th>
+            <th>% Anticipo</th>
+            <th>Monto Final</th>
+            <th>Estado</th>
+        </tr>
+    </thead>
+    <tbody>
+        <%= render @payments %>
+    </tbody>
+</table>
+</div>
+
+
+<%= render 'modal_payments' %>

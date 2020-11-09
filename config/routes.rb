@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   root to: 'payments#index'
   resources :payments
-  resources :searches
+  post 'search', to: 'payments#results'
 end

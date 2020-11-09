@@ -1,0 +1,59 @@
+
+<% @payments.each do |pay| %>
+<div class="modal fade" id="<%= pay.id.to_s%>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Estado de Solicitud #<%= pay.id %></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div id="pay_<%= pay.id %>" class="card <% if pay.estado === 'Procesando' %> border-warning
+            <% elsif pay.estado === 'Aprobado' %>
+            border-success
+            <% else %>
+            border-danger
+            <% end %> shadow-sm mb-3 py-3">
+            <div class="card-body text-primary">
+                <h6 class="text-dark text-justify">
+                <ul class="nav justify-content-center align-items-center">
+                    <li class="nav-item mx-3">
+                    Estado: <span class="badge <% if pay.estado === 'Procesando' %>
+                        badge-warning
+                        <% elsif pay.estado === 'Aprobado' %>
+                        badge-success
+                        <% else %>
+                        badge-danger
+                        <% end %>"><%= pay.estado %></span>
+                    </li>
+                    <li class="nav-item mx-3">
+                    Fecha: <%= pay.created_at.strftime("%d-%m-%Y")%>
+                    </li>
+                    <li class="nav-item mx-3">
+                    Número de Facturas: <%= pay.numfact %>
+                    </li>
+                    <li class="nav-item mx-3">
+                    Monto de Facturas: <%= number_with_delimiter(pay.monto_total, :delimiter => '.')%>
+                    </li>
+                    <li class="nav-item mx-3">
+                    <button class="btn btn-primary btn-sm">Chat con Ejecutivo</button>
+                    </li>
+                    <li class="nav-item mx-3">
+                    <button class="btn btn-outline-primary btn-sm">Ver Detalles</button>
+                    </li>
+                </ul>
+                </h6>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+<% end %>

@@ -1,0 +1,26 @@
+<div class="row my-2 p-2">
+    <div class="col">
+        <%= link_to 'Home', root_path, class:"btn btn-light float-right"  %>
+
+        <h5 class="float-left text-secondary">Resultados</h5>
+    </div>
+  </div>
+  <div class="row shadow-sm p-2">
+    <div class="col">
+
+      <h4 class="float-left">Resultados de Anticipos</h1>
+    </div>
+  </div>
+
+ <div class="row py-4">
+   
+
+    <div class="col form-inline">
+      <div class="form-group">
+        <%= form_tag "/search" do %>
+        <%= text_field_tag("termino", value = nil, options = { placeholder:' Deudor o ID', class:'fa form-control mr-2'}) %>
+        <% end %>
+      </div>
+     
+    </div>
+  </div>
