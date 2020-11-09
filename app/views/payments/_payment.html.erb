@@ -55,8 +55,8 @@
           <% end %> shadow-sm mb-3 py-3">
           <div class="card-body text-primary">
               <h6 class="text-dark text-justify">
-              <ul class="nav justify-content-center align-items-center">
-                  <li class="nav-item mx-3">
+              <ul class="list-group justify-content-center align-items-center">
+                  <li class="list-group-item mx-3">
                   Estado: <span class="badge <% if payment.estado === 'Procesando' %>
                       badge-warning
                       <% elsif payment.estado === 'Aprobado' %>
@@ -65,19 +65,19 @@
                       badge-danger
                       <% end %>"><%= payment.estado %></span>
                   </li>
-                  <li class="nav-item mx-3">
+                  <li class="list-group-item mx-3">
                   Fecha: <%= payment.created_at.strftime("%d-%m-%Y")%>
                   </li>
-                  <li class="nav-item mx-3">
+                  <li class="list-group-item mx-3">
                   Número de Facturas: <%= payment.numfact %>
                   </li>
-                  <li class="nav-item mx-3">
+                  <li class="list-group-item mx-3">
                   Monto de Facturas: <%= number_with_delimiter(payment.monto_total, :delimiter => '.')%>
                   </li>
-                  <li class="nav-item mx-3">
+                  <li class="list-group-item mx-3">
                   <button class="btn btn-primary btn-sm">Chat con Ejecutivo</button>
                   </li>
-                  <li class="nav-item mx-3">
+                  <li class="list-group-item mx-3">
                   <button class="btn btn-outline-primary btn-sm">Ver Detalles</button>
                   </li>
               </ul>
@@ -85,9 +85,7 @@
               </div>
           </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
+     
     </div>
   </div>
 </div>
