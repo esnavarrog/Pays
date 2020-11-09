@@ -1,4 +1,4 @@
-<tr id="payment_<%= payment.id %>" class="row_payments">
+<tr id="payment_<%= payment.id %>" class="row_payments bg-white shadow-sm">
     <td class="align-middle"><button class="btn btn-light btn-sm" data-toggle="modal" data-target="#<%= payment.id.to_words.delete(' ') %>"> #<%= payment.id %></button></td>
     <td class="align-middle"><button class="btn btn-light btn-sm" data-toggle="modal" data-target="#<%= payment.id.to_words.delete(' ') %>"><%= payment.deudor %></button></td>
     <td class="align-middle"><%= payment.created_at.strftime("%d-%m-%Y") %></td>
@@ -55,7 +55,10 @@
           <% end %> shadow-sm mb-3 py-3">
           <div class="card-body text-primary">
               <h6 class="text-dark text-justify">
-              <ul class="list-group justify-content-center align-items-center">
+              <ul class="list-group">
+                  <li class="list-group-item mx-3">
+                    Nombre Deudor: <%= payment.deudor.capitalize%>
+                  </li>
                   <li class="list-group-item mx-3">
                   Estado: <span class="badge <% if payment.estado === 'Procesando' %>
                       badge-warning
