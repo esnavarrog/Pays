@@ -1,4 +1,4 @@
-<tr id="payment_<%= payment.id %>" class="row_payments bg-white shadow-sm">
+<tr id="payment_<%= payment.id %>" class="row_payments bg-white">
     <td class="align-middle"><button class="btn btn-light btn-sm" data-toggle="modal" data-target="#<%= payment.id.to_words.delete(' ') %>"> #<%= payment.id %></button></td>
     <td class="align-middle"><button class="btn btn-light btn-sm" data-toggle="modal" data-target="#<%= payment.id.to_words.delete(' ') %>"><%= payment.deudor %></button></td>
     <td class="align-middle"><%= payment.created_at.strftime("%d-%m-%Y") %></td>
