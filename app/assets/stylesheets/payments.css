@@ -1,18 +1,1 @@
-.dropdown-toggle::after {
-    display: none;
-}
 
-.row_payments{
-    background-color: #ffff;
-    
-}
-.table{
-    border-radius: 8px;
-    border-collapse: separate;
-    border-spacing: 0px 8px;
-
-}
-
-#pay_<%= @payment.id %>{
-    display: none;
-}
