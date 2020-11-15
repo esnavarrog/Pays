@@ -1,5 +1,4 @@
 class PaymentsController < ApplicationController
-  helper_method :sort_column, :sort_direction
   before_action :set_payment, only: [:show, :edit, :update, :destroy]
 
 
@@ -8,18 +7,14 @@ class PaymentsController < ApplicationController
     @end_date = params[:end].try(:to_date) || Date.current
     range = (@start_date..@end_date)
 
-    @payments = Payment.where(created_at: range).order(created_at: :desc).paginate(per_page: 10, :page =>params[:page])
     @payment = Payment.new
+    @payments = Payment.where(updated_at: range).paginate(page: params[:page], per_page: 10).order(updated_at: :desc)
   end
 
   def new
     @payment = Payment.new
   end
-  def search
 
-    @payments = Payment.order(created_at: :desc).search(params[:word])
-    respond_to :js
-  end 
 
   def edit
   end
@@ -31,7 +26,6 @@ class PaymentsController < ApplicationController
         format.json { render :index, status: :created, location: @payment}
         format.js
       else
-        format.html { render :new }
         format.json { render json: @payment.errors, status: :unprocessable_entity }
         format.js
       end
@@ -53,8 +47,8 @@ class PaymentsController < ApplicationController
   def destroy
     @payment.destroy
     respond_to do |format|
-      format.html { redirect_back fallback_location: @product, notice: 'La lista fué borrada satisfactoriamente' }
       format.json { head :no_content }
+      format.js
     end
   end
 

@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-@payments = Payment.create([ 
+Payment.create([ 
     { deudor: 'Hornilla', created_at:'2020-09-12', pay: 90, estado: 'Procesando', numfact: 6, monto_total: 987654 },
     { deudor: 'Esteban', created_at:'2020-10-12', pay: 90, estado: 'Procesando', numfact: 8, monto_total: 896435 },
     { deudor: 'Romina', created_at:'2020-10-05', pay: 90, estado: 'Aprobado', numfact: 9, monto_total: 456342 },
@@ -23,5 +23,5 @@
     { deudor: 'Diego', created_at:'2020-10-27', pay: 90, estado: 'Procesando', numfact: 71, monto_total: 990550},
     { deudor: 'Diego', created_at:'2020-11-07', pay: 90, estado: 'Procesando', numfact: 72, monto_total: 654734},
     { deudor: 'Diego', created_at:'2020-11-08', pay: 90, estado: 'Procesando', numfact: 72, monto_total: 455645},
-    { deudor: 'Diego', created_at:'2020-11-06', pay: 90, estado: 'Procesando', numfact: 72, monto_total: 987654}]
-    )
+    { deudor: 'Diego', created_at:'2020-11-06', pay: 90, estado: 'Procesando', numfact: 72, monto_total: 987654}
+])

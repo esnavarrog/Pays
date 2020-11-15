@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 <div class="container-fluid bg-light">
-=======
 <div class="container-margin">
->>>>>>> 79da1fd14b24ca6eb0c7d73dfc69ef375c69822f
   <%= render './partials/header'%>
   <div class="tab-content bg-light-grey" id="myTabContent">
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
@@ -21,7 +18,8 @@
                 <th>Estado</th>
             </tr>
         </thead>
-        <tbody id="tablePayments">
+        <tbody id="tablaPayments">
+
           <%= render @payments%>
         </tbody>
     
@@ -34,9 +32,25 @@
     <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
   </div>
 </div>
+</div>
 
   
-<%= render 'modal_payments' %>
+<div class="modal fade" id="modalPayments" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modal-payments-title">Nuevo Anticipo</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="modal-body-payments">
+          <%= render 'form' %>
+      </div>
+  
+    </div>
+  </div>
+</div>
 
 
 <%= form_tag root_path, method: :get do %>
