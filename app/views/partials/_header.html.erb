@@ -1,37 +1,36 @@
-<div class="row my-2 p-2">
-    <div class="col bg-transparent">
-
-        <%= link_to 'Home', root_path, class:"btn btn-light float-right"  %>
-
-      <h5 class="text-secondary" id="title_h5">Anticipar</h5>
-    </div>
+<div class="row my-2 py-2 ">
+  <div class="col bg-transparent container-margin">
+    <h5 class="" id="title_h5">Anticipar</h5>
   </div>
-  <div class="row p-2 mb-4 bg-white">
-    <div class="col">
+</div>
 
-      <h4 class="float-left" id="title_h1">Cartola de Anticipos</h1>
-      <!-- <button class="btn btn-primary float-right" data-target="#modalPayments" data-toggle="modal">Anticipar Factura</button> -->
-      <%= link_to new_payment_path, {remote: true, class:'btn btn-primary float-right', id:'añadir-payment-btn'} do %>
+  <div class="row py-2 mb-4 bg-white">
+    <div class="col container-margin">
+
+      <h4 class="float-left align-middle" id="title_h1">Cartola de Anticipos</h1>
+      <%= link_to new_payment_path, {remote: true, class:'btn btn-primary align-middle float-right', id:'añadir-payment-btn'} do %>
         Anticipar Factura
       <% end %>
         
     </div>
   </div>
+  <div class="container-margin">
 
-  <ul class="nav nav-tabs mt-4" id="myTab" role="tablist">
-    <li class="nav-item" role="presentation">
-      <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Últimos Anticipos</a>
-    </li>
-    <li class="nav-item" role="presentation">
-      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Simular Anticipos</a>
-    </li>
-    <li class="nav-item" role="presentation">
-      <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Mis Deudores</a>
-    </li>
-  </ul>
+    <ul class="nav nav-tabs mt-4" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Últimos Anticipos</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Simular Anticipos</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Mis Deudores</a>
+      </li>
+    </ul>
+  </div>
   
 
- <div class="row mt-3 py-4">
+ <div class="row mt-3 pt-3 padding-bottom ml-4">
    
 
     <div class="col form-inline">
@@ -39,7 +38,7 @@
         <%= form_tag '/search/search', method: :get, remote: true, id: 'search-form' do %>
         <%= text_field_tag("word", value = nil, options = { placeholder:' Buscar...', class:'form-control search_input mr-3'} ) %>
         <% end %>
-        <input type="text" id="daterange" class="form-control search_input"/>
+        <input type="text" id="daterange" class="form-control search_input" placeholder="Ordenar"/>
       </div>
      
     </div>

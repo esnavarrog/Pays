@@ -34,6 +34,9 @@
 }
 
 $primary: #0055B8;
+$danger: var(--danger);
+$warning: var(--warning);
+$success: var(--success);
 $orsan-blue: #0055B8;
 $primary-hover: #002B5C;
 $menu-grey: #3D4549;
@@ -62,12 +65,6 @@ body{
     color: var(--orsan-grey)!important;
     line-height: 27px;
     font-weight: 600;
-    display: flex;
-    align-items: center;
-    flex: none;
-    order: 0;
-    align-self: center;
-    flex-grow: 0;
     margin: 8px 0px;
 }
 #title_h1{
@@ -103,6 +100,7 @@ body{
     /* White */
 
     background: #FFFFFF;
+    margin-left: 0px;
     /* ORSAN GRAY */
 
     border: 1px solid #A2A9AD;
@@ -110,13 +108,55 @@ body{
     border-radius: 4px;
 }
 
+
+.nav-tabs{
+    border-bottom: 2px solid #EBECED;
+}
+
+.nav-tabs .nav-link {
+    
+    border:none;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+    display: flex;
+    align-items: center;
+}
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: $orsan-blue;
+    background-color: transparent;
+    border-color: transparent transparent $orsan-blue;
+    border-bottom: 3px solid;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+a{
+    color: #3D4549;
+    text-decoration: none;
+    background-color: transparent;
+}
+
 .container-margin{
     margin-left: 40px;
     margin-right: 40px;
 }
+.header{
+    height:64px;
+}
 
 .btn{
-    
     padding: 5px 24px;
 }
 
@@ -125,6 +165,20 @@ body{
     background-color: $orsan-blue;
     border-color: $orsan-blue;
     border-radius: 4px;
+}
+
+.btn-warning {
+    opacity: 0.8;
+    background-color: var(--warning);
+    border-color: var(--warning);
+}
+.btn-success {
+    background-color: var(--success);
+    border-color: var(--success);
+}
+.btn-danger {
+    background-color: var(--danger);
+    border-color: var(--danger);
 }
 .btn-primary:hover {
     color: #fff;
@@ -144,8 +198,31 @@ body{
     border-color: $primary-hover;
 }
 
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: $orsan-blue;
+    border-color: $orsan-blue;
+}
+.page-link {
+    font-family: 'Open Sans';
+    position: relative;
+    display: block;
+    padding: .5rem .75rem;
+    margin-left: -1px;
+    line-height: 1;
+    color: $menu-grey;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+}
+
 .dropdown-toggle::after {
     display: none;
+}
+
+.dots_menu{
+    padding: 5px 0px;
+    color: #CFD2D2;
 }
 
 .row_payments{
@@ -183,6 +260,10 @@ input, textarea{
     font-style: normal;
     font-weight: normal;
     text-decoration: inherit;
+}
+
+.padding-bottom {
+    padding-bottom: 46px;
 }
 
 th{

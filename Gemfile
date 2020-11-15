@@ -32,6 +32,8 @@ gem 'will_paginate-bootstrap4'
 gem "font-awesome-rails"
 gem "numbers_and_words"
 gem "jquery-rails"
+gem 'momentjs-rails'
+gem 'bootstrap-daterangepicker-rails'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false

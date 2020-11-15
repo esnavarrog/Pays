@@ -8,7 +8,7 @@ class PaymentsController < ApplicationController
     range = (@start_date..@end_date)
 
     @payment = Payment.new
-    @payments = Payment.where(updated_at: range).paginate(page: params[:page], per_page: 10).order(updated_at: :desc)
+    @payments = Payment.where(created_at: range).paginate(page: params[:page], per_page: 10).order(created_at: :desc).all
   end
 
   def new
