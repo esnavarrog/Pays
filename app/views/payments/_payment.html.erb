@@ -1,10 +1,11 @@
-<tr id="payment_<%= payment.id %>" class="row_payments bg-white shadow-sm">
-    <td class="align-middle"><button class="btn btn-light btn-sm" data-toggle="modal" data-target="#<%= payment.id.to_words.delete(' ') %>"> #<%= payment.id %></button></td>
-    <td class="align-middle"><button class="btn btn-light btn-sm" data-toggle="modal" data-target="#<%= payment.id.to_words.delete(' ') %>"><%= payment.deudor %></button></td>
-    <td class="align-middle"><%= payment.created_at.strftime("%d-%m-%Y") %></td>
-    <td class="align-middle"><%= payment.numfact %></td>
-    <td class="align-middle"><%= payment.pay %>%</td>
-    <td class="align-middle"><%= number_with_delimiter(payment.monto_total, :delimiter => '.') %></td>
+<tbody id="tablaPayments">
+<tr id="payment_<%= payment.id %>" class="row_payments bg-white">
+    <td class="align-middle text-table"><a class="link" data-toggle="modal" data-target="#<%= payment.id.to_words.delete(' ') %>"> #<%= payment.id %></a></td>
+    <td class="align-middle text-table"><a class="link" data-toggle="modal" data-target="#<%= payment.id.to_words.delete(' ') %>"><%= payment.deudor %></a></td>
+    <td class="align-middle text-table"><%= payment.created_at.strftime("%d-%m-%Y") %></td>
+    <td class="align-middle text-table"><%= payment.numfact %></td>
+    <td class="align-middle text-table"><%= payment.pay %> %</td>
+    <td class="align-middle text-table"><%= number_with_delimiter(payment.monto_total, :delimiter => '.') %></td>
     
     <td class="align-middle">
       <% if payment.estado === "Procesando" %>
@@ -36,6 +37,7 @@
         </div>
     </td>
 </tr>
+</tbody>
 
 <div class="modal fade" id="<%= payment.id.to_words.delete(' ') %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">

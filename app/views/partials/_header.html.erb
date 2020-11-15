@@ -3,13 +3,14 @@
 
         <%= link_to 'Home', root_path, class:"btn btn-light float-right"  %>
 
-      <h5 class="text-secondary">Anticipar</h5>
+      <h5 class="text-secondary" id="title_h5">Anticipar</h5>
     </div>
   </div>
   <div class="row shadow-sm p-2 mb-4 bg-white">
     <div class="col">
 
-      <h4 class="float-left">Cartola de Anticipos</h1>
+      <h4 class="float-left" id="title_h1">Cartola de Anticipos</h1>
+      <button class="btn btn-primary float-right" data-target="#modalPayments" data-toggle="modal">Anticipar Factura</button>
         
     </div>
   </div>
@@ -32,10 +33,10 @@
 
     <div class="col form-inline">
       <div class="form-group">
-        <%= form_tag "/search" do %>
-        <%= text_field_tag("termino", value = nil, options = { placeholder:' Deudor o ID', class:'fa form-control shadow-sm mr-2'}) %>
+        <%= form_tag '/search/search', method: :get, remote: true, id: 'search-form' do %>
+        <%= text_field_tag("word", value = nil, options = { placeholder:' Buscar...', class:'form-control search_input mr-3'} ) %>
         <% end %>
-        <input type="text" id="daterange" class="form-control shadow-sm"/>
+        <input type="text" id="daterange" class="form-control search_input"/>
       </div>
      
     </div>

@@ -1,0 +1,217 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require daterangepicker/daterangepicker
+ *= require font-awesome
+ *= require_self
+ */
+
+
+ :root{
+    --orsan-blue: #0055B8;
+    --primary: #0055B8;
+    --red: #FF5C4E;
+    --danger: #FF5C4E;
+    --green: #2FBC6B;
+    --success: #2FBC6B;
+    --yellow: #F0B965;
+    --warning: #F0B965;
+    --menu-grey: #3D4549;
+    --orsan-grey: #A2A9AD;
+    --divider: #EBECED;
+    --light-grey: #CFD2D2;
+    --desactivated-blue: #A8C9F1;
+}
+
+$primary: #0055B8;
+$orsan-blue: #0055B8;
+$primary-hover: #002B5C;
+$menu-grey: #3D4549;
+
+
+
+
+html {
+    font-family: open-sans;
+    line-height: 1;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1;
+    font-size: 14px;
+    color: $menu-grey;
+    background-color: #f9f9f9;
+}
+
+#title_h5{
+    font-size: 20px;
+    font-style: normal;
+    color: var(--orsan-grey)!important;
+    line-height: 27px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    flex: none;
+    order: 0;
+    align-self: center;
+    flex-grow: 0;
+    margin: 8px 0px;
+}
+#title_h1{
+    position: static;
+    left: 0%;
+    right: 0%;
+    top: -6.25%;
+    bottom: -6.25%;
+
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 27px;
+    display: flex;
+    align-items: center;
+
+    /* Menu Gray */
+
+    color: #3D4549;
+
+    /* Inside Auto Layout */
+
+    flex: none;
+    order: 0;
+    align-self: center;
+    flex-grow: 0;
+    margin: 8px 0px;
+}
+
+.search_input{
+
+    /* White */
+
+    background: #FFFFFF;
+    /* ORSAN GRAY */
+
+    border: 1px solid #A2A9AD;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.container-margin{
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.btn{
+    
+    padding: 5px 24px;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: $orsan-blue;
+    border-color: $orsan-blue;
+    border-radius: 4px;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: $primary-hover;
+    border-color: $primary-hover;
+    border-radius: 4px;
+}
+
+.btn-outline-primary {
+    color: $orsan-blue;
+    border-color: $orsan-blue;
+}
+
+.btn-outline-primary:hover {
+    color: $primary-hover;
+    background-color: #FFFFFF;
+    border-color: $primary-hover;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.row_payments{
+    background-color: #ffff;
+    
+}
+.text-table{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15.9991px;
+    line-height: 22px;
+
+    /* Menu Gray */
+
+    color: #3D4549;
+
+    /* Inside Auto Layout */
+
+    flex: none;
+    order: 1;
+    align-self: center;
+    flex-grow: 0;
+    margin: 109.994px 0px;
+}
+.tab-pane:hover {
+    border-bottom: 3px solid $orsan-blue;
+  }
+  
+.tab-pane:active {
+    border-bottom: 3px solid $orsan-blue;
+}
+
+input, textarea{
+    font-family: FontAwesome, "Open Sans", Verdana, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+}
+
+th{
+    background-color: transparent;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 19px;
+}
+td{
+    position: static;
+    height: 72px;
+    /* White */
+
+    background: #FFFFFF;
+    border-radius: 8px;
+
+    /* Inside Auto Layout */
+
+    flex: none;
+    order: 0;
+    align-self: center;
+    flex-grow: 0;
+    margin: 0px 8px;
+
+    font-size: 14px;
+}
+
+.table{
+    border-collapse: separate;
+    border-spacing: 0px 8px;
+}

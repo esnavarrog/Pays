@@ -1,9 +1,11 @@
-<div class="container bg-light">
+<div class="container-fluid bg-light">
   <%= render './partials/header'%>
   <div class="tab-content bg-light-grey" id="myTabContent">
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
       
+
       <table id="tablaPrepayments" class="table table-borderless" width="100">
+      
         <thead>
             <tr>
                 <th>ID</th>
@@ -15,13 +17,14 @@
                 <th>Estado</th>
             </tr>
         </thead>
-        <tbody id="tablaPayments">
+        <tbody id="tablePayments">
           <%= render @payments%>
         </tbody>
-  
+    
       </table>
+     
   
-    <%= will_paginate @payments,list_classes: %w(pagination justify-content-center), previous_label: '&laquo;', :next_label => '&raquo;' , renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+    <%= will_paginate @payments, list_classes: %w(pagination justify-content-center), previous_label: '&laquo;', :next_label => '&raquo;' , renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
     </div>
     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
     <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
@@ -62,6 +65,7 @@
     });
   });
 </script>
+
 
 <script>
   function mostrarCartas() {

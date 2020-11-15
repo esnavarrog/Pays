@@ -1,7 +1,5 @@
-<div class="container bg-light">
-    <%= render './partials/result'%>
-
 <table id="tablaPrepayments" class="table table-borderless" width="100">
+      
     <thead>
         <tr>
             <th>ID</th>
@@ -13,11 +11,8 @@
             <th>Estado</th>
         </tr>
     </thead>
-    <tbody>
-        <%= render @payments %>
+    <tbody id="tablaPayments">
+      <%= render @payments%>
     </tbody>
-</table>
-</div>
 
-
-<%= render 'modal_payments' %>
+  </table>

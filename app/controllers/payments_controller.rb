@@ -1,4 +1,5 @@
 class PaymentsController < ApplicationController
+  helper_method :sort_column, :sort_direction
   before_action :set_payment, only: [:show, :edit, :update, :destroy]
 
 
@@ -7,16 +8,17 @@ class PaymentsController < ApplicationController
     @end_date = params[:end].try(:to_date) || Date.current
     range = (@start_date..@end_date)
 
-    @payments = Payment.where(created_at: range).order(created_at: :desc).paginate(page: params[:page], per_page: 10).all
+    @payments = Payment.where(created_at: range).order(created_at: :desc).paginate(per_page: 10, :page =>params[:page])
     @payment = Payment.new
   end
 
   def new
     @payment = Payment.new
   end
-  def results
+  def search
 
-    @payments = Payment.order(created_at: :desc).buscador(params[:termino])
+    @payments = Payment.order(created_at: :desc).search(params[:word])
+    respond_to :js
   end 
 
   def edit
