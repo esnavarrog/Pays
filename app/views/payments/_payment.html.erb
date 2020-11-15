@@ -4,7 +4,7 @@
     <td class="align-middle text-table"><a class="link" data-toggle="modal" data-target="#<%= payment.id.to_words.delete(' ') %>"><%= payment.deudor %></a></td>
     <td class="align-middle text-table"><%= payment.updated_at.strftime("%d-%m-%Y") %></td>
     <td class="align-middle text-table"><%= payment.numfact %></td>
-    <td class="align-middle text-table"><%= payment.pay %> %</td>
+    <td class="align-middle text-table">$ <%= payment.pay %> %</td>
     <td class="align-middle text-table"><%= number_with_delimiter(payment.monto_total, :delimiter => '.') %></td>
     <td class="align-middle">
       <% if payment.estado === "Procesando" %>
