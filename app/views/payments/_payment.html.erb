@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <tbody id="tablaPayments">
 <tr id="payment_<%= payment.id %>" class="row_payments bg-white">
     <td class="align-middle text-table"><a class="link" data-toggle="modal" data-target="#<%= payment.id.to_words.delete(' ') %>"> #<%= payment.id %></a></td>
@@ -6,6 +7,15 @@
     <td class="align-middle text-table"><%= payment.numfact %></td>
     <td class="align-middle text-table"><%= payment.pay %> %</td>
     <td class="align-middle text-table"><%= number_with_delimiter(payment.monto_total, :delimiter => '.') %></td>
+=======
+<tr id="payment_<%= payment.id %>" class="row_payments bg-white">
+    <td class="align-middle"><button class="btn btn-light btn-sm" data-toggle="modal" data-target="#<%= payment.id.to_words.delete(' ') %>"> #<%= payment.id %></button></td>
+    <td class="align-middle"><button class="btn btn-light btn-sm" data-toggle="modal" data-target="#<%= payment.id.to_words.delete(' ') %>"><%= payment.deudor %></button></td>
+    <td class="align-middle"><%= payment.created_at.strftime("%d-%m-%Y") %></td>
+    <td class="align-middle"><%= payment.numfact %></td>
+    <td class="align-middle"><%= payment.pay %>%</td>
+    <td class="align-middle"><%= number_with_delimiter(payment.monto_total, :delimiter => '.') %></td>
+>>>>>>> 79da1fd14b24ca6eb0c7d73dfc69ef375c69822f
     
     <td class="align-middle">
       <% if payment.estado === "Procesando" %>
