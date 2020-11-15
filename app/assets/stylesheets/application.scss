@@ -166,17 +166,25 @@ a{
     border-color: $orsan-blue;
     border-radius: 4px;
 }
+.badge{
+    font-size: 10px;
+    font-weight: normal;
+    line-height: 14px;
+    letter-spacing: 0.01em;
+    padding: 5px 10px;
+}
 
-.btn-warning {
+.badge-warning {
     opacity: 0.8;
+    color: #fff;
     background-color: var(--warning);
     border-color: var(--warning);
 }
-.btn-success {
+.badge-success {
     background-color: var(--success);
     border-color: var(--success);
 }
-.btn-danger {
+.badge-danger {
     background-color: var(--danger);
     border-color: var(--danger);
 }

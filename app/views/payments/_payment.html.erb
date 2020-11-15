@@ -8,15 +8,15 @@
     <td class="align-middle text-table"><% if payment.monto_total.present?%>$<% end%> <%= number_with_delimiter(payment.monto_total, :delimiter => '.') %></td>
     <td class="align-middle">
       <% if payment.estado === "Procesando" %>
-        <div class="btn btn-warning btn-sm text-light">
+        <div class="badge badge-warning">
           <%= payment.estado %>
         </div>
       <% elsif payment.estado === "Aprobado" %>
-        <div class="btn btn-success btn-sm">
+        <div class="badge badge-success">
           <%= payment.estado %>
         </div>
       <% else %>
-        <div class="btn btn-danger btn-sm">
+        <div class="badge badge-danger">
           <%= payment.estado %>
         </div>
     <% end %>
